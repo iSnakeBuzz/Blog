@@ -1,0 +1,17 @@
+.posts {
+  display: grid;
+  place-items: center;
+  margin: 20px 0;
+}
+
+.posts > * {
+  margin: 20px 0;
+}
+
+.posts > :first-child {
+  margin-top: 0;
+}
+
+.posts > :last-child {
+  margin-bottom: 0;
+}
