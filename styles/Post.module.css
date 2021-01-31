@@ -29,11 +29,11 @@
 
   border-radius: 5px 5px 0 0;
 
-  transition: all 250ms ease-in-out;
+  transition: all 600ms ease-in-out;
 }
 
 .imageCont img:hover {
-  transform: scale(1.09);
+  transform: scale(1.04);
 }
 
 .title {
@@ -41,6 +41,12 @@
   font-weight: bold;
   font-size: 22px;
   border-bottom: solid 1px #a0a0a0;
+
+  cursor: pointer;
+}
+
+.title:hover {
+  text-decoration: underline #002f7a;
 }
 
 .description {

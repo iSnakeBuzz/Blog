@@ -1,0 +1,75 @@
+.post {
+  border: solid 1px #a0a0a0;
+
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.title {
+  margin-top: 20px;
+  padding: 10px 0px;
+
+  display: flex;
+  place-items: center;
+
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.content {
+  padding: 15px 10px;
+}
+
+.img {
+  position: relative;
+  width: 100%;
+  min-width: 350px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 1400px) {
+  .img {
+    height: 500px;
+  }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1399px) {
+  .img {
+    height: 450px;
+  }
+}
+
+@media screen and (min-width: 770px) and (max-width: 989px) {
+  .img {
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 770px) {
+  .img {
+    height: 200px;
+  }
+}
+
+
+.img img {
+  position: absolute;
+
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.vhr {
+  padding: 0.09rem;
+  background-color: #979797;
+  margin-right: 8px;
+  height: 30px;
+}
+
+.back {
+  cursor: pointer;
+  margin-right: 8px;
+}

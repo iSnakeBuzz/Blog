@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Post = ({ postData }) => {
     return (
         <div className={style.post}>
-            <Link href={"/post/"} passHref>
+            <Link href={`/post/${postData.name}`} passHref>
                 <div className={style.imageCont}>
                     <div className="absolute">
                         <img src={postData.img} />
@@ -14,10 +14,13 @@ const Post = ({ postData }) => {
             </Link>
 
             <div className={style.postContent}>
-                <div className={style.title}>{postData.title}</div>
+                <Link href={`/post/${postData.name}`} passHref>
+                    <div className={style.title}>{postData.title}</div>
+                </Link>
                 <div className={style.description}>
                     <span>{postData.description}</span>
-                    <span className={style.readMore}>Read more</span>
+                    <Link href={`/post/${postData.name}`}>
+                        <span className={style.readMore}>Read more</span></Link>
                 </div>
             </div>
         </div>

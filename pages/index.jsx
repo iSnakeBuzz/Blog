@@ -13,21 +13,7 @@ export default function Home() {
       <Layout>
         <Posts>
           <Post postData={{
-            title: "Hello World",
-            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
-            img: "/banner.png"
-          }} />
-          <Post postData={{
-            title: "Hello World",
-            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
-            img: "/banner.png"
-          }} />
-          <Post postData={{
-            title: "Hello World",
-            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
-            img: "/banner.png"
-          }} />
-          <Post postData={{
+            name: "hello-world",
             title: "Hello World",
             description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
             img: "/banner.png"
