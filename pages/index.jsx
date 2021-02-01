@@ -1,14 +1,19 @@
+import React from 'react';
 import Head from 'next/head'
 import Layout from '../utils/Modules/Layout'
 import Post from '../utils/Modules/Post'
 import Posts from '../utils/Modules/Posts'
 
 export default function Home() {
+
+
   return (
     <div className="">
       <Head>
         <title>Blog</title>
       </Head>
+
+      
 
       <Layout>
         <Posts>
