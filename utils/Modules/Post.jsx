@@ -17,10 +17,13 @@ const Post = ({ postData }) => {
                 <Link href={`/post/${postData.name}`} passHref>
                     <div className={style.title}>{postData.title}</div>
                 </Link>
+
                 <div className={style.description}>
                     <span>{postData.description}</span>
+
                     <Link href={`/post/${postData.name}`}>
-                        <span className={style.readMore}>Read more</span></Link>
+                        <span className={style.readMore}>Read more</span>
+                    </Link>
                 </div>
             </div>
         </div>

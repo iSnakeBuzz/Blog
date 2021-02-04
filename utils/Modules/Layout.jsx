@@ -1,12 +1,13 @@
 import React from 'react';
+import { Container } from '@material-ui/core';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, maxWidth }) => {
     return (
-        <div className="container">
+        <Container maxWidth={maxWidth}>
             <main>
                 {children}
             </main>
-        </div>
+        </Container>
     );
 };
 

@@ -8,12 +8,12 @@ export default function Home() {
 
 
   return (
-    <div className="">
+    <>
       <Head>
         <title>Blog</title>
       </Head>
 
-      <Layout>
+      <Layout maxWidth="xl">
         <Posts>
           <Post postData={{
             name: "hello-world",
@@ -24,7 +24,6 @@ export default function Home() {
         </Posts>
 
       </Layout>
-
-    </div>
+    </>
   )
 }

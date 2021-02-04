@@ -1,11 +1,41 @@
 .admin main {
-  margin-left: 80px;
+  margin-left: 65px;
 }
 
 .admin nav {
   position: fixed;
-  background-color: blueviolet;
+  background-color: #7b1fa2;
 
-  width: 80px;
+  width: 65px;
   height: 100vh;
+}
+
+.navItems {
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  margin-top: 15px;
+
+  height: -webkit-fill-available;
+}
+
+.navItems > * {
+  cursor: pointer;
+  margin: 12px 0;
+}
+
+.navItems > :first-child {
+  margin-top: 0;
+}
+
+.navItems > :last-child {
+  margin-top: auto;
+}
+
+.navItemActive {
+  
+}
+
+.navIcons {
+  color: #ffffff;
 }
