@@ -8,7 +8,7 @@ const Post = ({ postData }) => {
             <Link href={`/post/${postData.name}`} passHref>
                 <div className={style.imageCont}>
                     <div className="absolute">
-                        <img src={postData.img} />
+                        <img src={postData.img} alt={postData.name} />
                     </div>
                 </div>
             </Link>

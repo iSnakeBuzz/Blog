@@ -13,8 +13,6 @@ export default function Home() {
         <title>Blog</title>
       </Head>
 
-      
-
       <Layout>
         <Posts>
           <Post postData={{

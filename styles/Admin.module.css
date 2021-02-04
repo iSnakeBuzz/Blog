@@ -1,0 +1,11 @@
+.admin main {
+  margin-left: 80px;
+}
+
+.admin nav {
+  position: fixed;
+  background-color: blueviolet;
+
+  width: 80px;
+  height: 100vh;
+}
