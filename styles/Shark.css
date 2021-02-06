@@ -1,7 +1,29 @@
+:root {
+  --primary: #1a6efc;
+  --secondary: #ffc33d;
+  --background: #ffffff;
+  --contrast-primary: #e9eef3;
+  --contrast-secondary: #f2f4f6;
+  --white: #ffffff;
+  --muted-text: #424952;
+  --text: #0c0c0c;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
 
-  background-color: #f1f1f1 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  color: var(--text);
+
+  background-color: var(--background) !important;
+}
+
+.vhr {
+  padding: 7px 0;
+  margin: 0 10px;
+  border: solid 1px var(--contrast-secondary);
 }

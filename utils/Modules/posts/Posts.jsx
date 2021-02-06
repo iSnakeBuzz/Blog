@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../../styles/Posts.module.css'
+import style from '../../../styles/posts/Posts.module.css'
 
 const Posts = ({ children }) => {
     return (

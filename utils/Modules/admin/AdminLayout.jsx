@@ -1,6 +1,6 @@
 import React from 'react';
 import Navigation from './Navigation';
-import styles from '../../../styles/Admin.module.css';
+import styles from '../../../styles/admin/Admin.module.css';
 
 const AdminLayout = ({ children }) => {
     return (

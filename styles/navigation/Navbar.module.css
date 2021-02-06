@@ -1,0 +1,57 @@
+.navbar {
+  padding: 15px 0;
+  width: -webkit-fill-available;
+
+  border-bottom: solid 1px var(--contrast-secondary);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.content {
+  display: flex;
+  place-items: center;
+}
+
+.logo {
+  height: 26px;
+  margin-right: 10px;
+  width: auto;
+}
+
+.subscribe {
+  display: flex;
+  place-items: center;
+  margin-left: auto;
+}
+
+.links {
+  display: flex;
+  place-items: center;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.links > * {
+  margin: 0 7px;
+
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: all 250ms ease-in;
+}
+
+.links > :hover {
+  color: var(--primary);
+}
+
+.links > :first-child {
+  margin-left: 0;
+}
+
+.links > :last-child {
+  margin-right: 0;
+}

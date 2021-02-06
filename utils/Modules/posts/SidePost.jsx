@@ -1,8 +1,9 @@
 import React from 'react';
-import style from '../../styles/Post.module.css';
+import style from '../../../styles/posts/SidePost.module.css';
 import Link from 'next/link';
+import Tag from '../utils/Tag';
 
-const Post = ({ postData }) => {
+const SidePost = ({ postData }) => {
     return (
         <div className={style.post}>
             <Link href={`/post/${postData.name}`} passHref>
@@ -13,7 +14,12 @@ const Post = ({ postData }) => {
                 </div>
             </Link>
 
-            <div className={style.postContent}>
+            <div>
+                <div className={style.tags}>
+                    <Tag text="Test" />
+                    <div style={{ marginLeft: "5px", fontWeight: "500" }}>● 4 min</div>
+                </div>
+
                 <Link href={`/post/${postData.name}`} passHref>
                     <div className={style.title}>{postData.title}</div>
                 </Link>
@@ -30,4 +36,4 @@ const Post = ({ postData }) => {
     );
 };
 
-export default Post;
+export default SidePost;

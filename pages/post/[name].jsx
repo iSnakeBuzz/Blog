@@ -1,8 +1,7 @@
 import React from 'react';
 import Layout from '../../utils/Modules/Layout';
-import style from '../../styles/PostIndex.module.css';
+import style from '../../styles/posts/PostIndex.module.css';
 import Router from 'next/router';
-import { Container } from '@material-ui/core';
 
 const index = () => {
 

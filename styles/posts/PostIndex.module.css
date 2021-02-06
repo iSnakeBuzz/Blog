@@ -23,7 +23,6 @@
 .img {
   position: relative;
   width: 100%;
-  min-width: 350px;
   max-height: 500px;
   overflow: hidden;
 }
