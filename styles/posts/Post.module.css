@@ -1,7 +1,7 @@
 .post {
   background-color: white;
   border-radius: 6px;
-  width: 100%;
+  width: -webkit-fill-available;
 
   padding: 10px;
   cursor: pointer;

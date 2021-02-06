@@ -1,3 +1,7 @@
+# 05/02/2021
+
+- Changed design to one more prettier.
+
 # 04/02/2021
 
 - Changed bootstrap to material-ui.

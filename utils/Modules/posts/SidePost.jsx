@@ -5,34 +5,26 @@ import Tag from '../utils/Tag';
 
 const SidePost = ({ postData }) => {
     return (
-        <div className={style.post}>
-            <Link href={`/post/${postData.name}`} passHref>
-                <div className={style.imageCont}>
-                    <div className="absolute">
-                        <img src={postData.img} alt={postData.name} />
+        <Link href={`/post/${postData.name}`} passHref>
+            <div className={style.post}>
+                <div className={style.sideImage}>
+                    <div className={style.imageCont}>
+                        <div className="absolute">
+                            <img src={postData.img} alt={postData.name} />
+                        </div>
                     </div>
                 </div>
-            </Link>
 
-            <div>
-                <div className={style.tags}>
-                    <Tag text="Test" />
-                    <div style={{ marginLeft: "5px", fontWeight: "500" }}>● 4 min</div>
-                </div>
+                <div className={style.content}>
+                    <div className={style.tags}>
+                        <Tag text="Test" />
+                        <div style={{ marginLeft: "5px", fontWeight: "500" }}>● 4 min</div>
+                    </div>
 
-                <Link href={`/post/${postData.name}`} passHref>
                     <div className={style.title}>{postData.title}</div>
-                </Link>
-
-                <div className={style.description}>
-                    <span>{postData.description}</span>
-
-                    <Link href={`/post/${postData.name}`}>
-                        <span className={style.readMore}>Read more</span>
-                    </Link>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

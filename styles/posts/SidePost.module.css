@@ -1,7 +1,9 @@
 .post {
+  display: flex;
+
   background-color: white;
   border-radius: 6px;
-  width: 100%;
+  width: -webkit-fill-available;
 
   padding: 10px;
   cursor: pointer;
@@ -15,11 +17,19 @@
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.26);
 }
 
+.content {
+  margin-left: 20px;
+}
+
+.sideImage {
+  width: 100px;
+}
+
 .imageCont {
   position: relative;
   overflow: hidden;
 
-  padding-bottom: 48%;
+  padding-bottom: 100%;
   border-radius: 8px;
 
   top: 0;
@@ -41,9 +51,9 @@
 }
 
 .title {
-  padding: 10px 0;
-  font-weight: bold;
-  font-size: 22px;
+  padding-top: 5px;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .description {
@@ -62,7 +72,6 @@
   display: flex;
   place-items: center;
 
-  margin-top: 10px;
   margin-left: 0px;
 }
 

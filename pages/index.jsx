@@ -15,35 +15,37 @@ export default function Home() {
       </Head>
 
       <Layout maxWidth="lg">
-        <Grid
-          container
-          spacing={10}
-        >
+        <div style={{ overflowX: "hidden" }}>
+          <Grid
+            container
+            spacing={10}
+          >
 
-          <Grid item xs="7">
-            <Posts>
-              <Post postData={{
-                name: "hello-world",
-                title: "Hello World",
-                description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
-                img: "/banner.png"
-              }} />
-            </Posts>
+            <Grid item xs="7">
+              <Posts>
+                <Post postData={{
+                  name: "hello-world",
+                  title: "Hello World",
+                  description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
+                  img: "/banner.png"
+                }} />
+              </Posts>
+            </Grid>
+
+            <Grid item xs="5">
+              <Posts>
+                <SidePost postData={{
+                  name: "side-post",
+                  title: "Tremendo blog che, esto es increible.",
+                  description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
+                  img: "/banner.png"
+                }} />
+              </Posts>
+            </Grid>
+
+
           </Grid>
-
-          <Grid item xs="5">
-            <Posts>
-              <SidePost postData={{
-                name: "side-post",
-                title: "Side post :)",
-                description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
-                img: "/banner.png"
-              }} />
-            </Posts>
-          </Grid>
-
-
-        </Grid>
+        </div>
       </Layout>
     </>
   )
