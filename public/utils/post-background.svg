@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="clip-PostIndexBackground">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="PostIndexBackground" clip-path="url(#clip-PostIndexBackground)">
+    <path id="Trazado_7" data-name="Trazado 7" d="M146.132.718c24.4,29.8,40.419,77.112,23.841,109.335C153.582,142.463,104.6,159.785,62.5,155.874S-14.984,126.817-38.453,90.5c-23.655-36.507-35.39-84-17.695-109.894S8.671-49.572,48.717-45.475,121.732-28.9,146.132.718Z" transform="translate(1565.963 485.203)" fill="#ffc33d"/>
+    <path id="Trazado_10" data-name="Trazado 10" d="M81.4-20.554C97.568,7.594,105.223,40.187,93,63.273c-12.222,22.963-44.321,36.3-76.543,36.3-32.1,0-64.321-13.333-78.272-37.284-13.827-24.074-9.63-58.642,6.42-86.79s43.951-49.877,70.124-48.889S65.346-48.7,81.4-20.554Z" transform="translate(311.086 526.928)" fill="#ffc33d"/>
+  </g>
+</svg>

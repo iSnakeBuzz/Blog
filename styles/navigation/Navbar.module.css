@@ -1,8 +1,6 @@
 .navbar {
   padding: 15px 0;
   width: -webkit-fill-available;
-
-  border-bottom: solid 1px var(--contrast-secondary);
 }
 
 .title {

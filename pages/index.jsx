@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Layout from '../utils/Modules/Layout'
 import Posts from '../utils/Modules/posts/Posts'
 import { Container, Grid, Hidden } from '@material-ui/core';
+import PageDecoration from '../utils/Modules/utils/PageDecoration';
 
 const index = () => {
   return (
@@ -11,6 +12,9 @@ const index = () => {
       <Head>
         <title>Blog</title>
       </Head>
+
+      {/* Page decoration */}
+      <PageDecoration />
 
       <Layout>
         <Container maxWidth="lg">

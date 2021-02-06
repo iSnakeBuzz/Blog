@@ -1,8 +1,9 @@
 import React from 'react';
 
 import styles from '../../../styles/navigation/Navbar.module.css'
-import { Button, Container, Grid } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 import Link from 'next/link';
+import SharkButton from '../utils/SharkButton';
 
 const Navbar = ({ color = "white" }) => {
 
@@ -40,7 +41,7 @@ const Navbar = ({ color = "white" }) => {
                     <Grid item xs={4}>
                         <div id="Button" className={styles.content}>
                             <div className={styles.subscribe} >
-                                <Button variant="contained" color={color === "white" ? '' : 'default'}>SUBSCRIBE</Button>
+                                <SharkButton color="white">SUBSCRIBE</SharkButton>
                             </div>
                         </div>
                     </Grid>

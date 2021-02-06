@@ -21,6 +21,11 @@ body {
 
   color: var(--text);
   background-color: var(--background) !important;
+
+  background-image: url("/utils/site-background.svg");
+  background-position: center bottom;
+  background-repeat: repeat-y;
+  background-size: cover;
 }
 
 .vhr {
@@ -29,14 +34,19 @@ body {
   border: solid 1px var(--contrast-secondary);
 }
 
+.bg-white {
+  background-color: var(--white);
+  color: var(--text);
+}
+
 .bg-primary {
   background-color: var(--primary);
-  color: white;
+  color: var(--white);
 }
 
 .bg-secondary {
   background-color: var(--secondary);
-  color: white;
+  color: var(--white);
 }
 
 .text_center {
@@ -57,4 +67,19 @@ body {
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.shark_button {
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+
+  border-radius: 8px;
+
+  transition: all 250ms ease-in-out;
+}
+
+.shark_button:hover,
+.bg-white:hover {
+  background-color: var(--contrast-primary) !important;
 }
