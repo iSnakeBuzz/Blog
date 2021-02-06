@@ -10,6 +10,10 @@ const theme = createMuiTheme({
             main: "#ffc33d"
         }
     },
+
+    overrides: {
+
+    }
 });
 
 export default theme;

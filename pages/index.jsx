@@ -5,9 +5,15 @@ import Layout from '../utils/Modules/Layout'
 import Post from '../utils/Modules/posts/Post'
 import SidePost from '../utils/Modules/posts/SidePost'
 import Posts from '../utils/Modules/posts/Posts'
-import { Grid } from '@material-ui/core';
+import { Grid, Hidden } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-export default function Home() {
+const index = () => {
+
+
+
+
   return (
     <>
       <Head>
@@ -15,38 +21,31 @@ export default function Home() {
       </Head>
 
       <Layout maxWidth="lg">
-        <div style={{ overflowX: "hidden" }}>
-          <Grid
-            container
-            spacing={10}
-          >
+        <Grid
+          container
+        >
 
-            <Grid item xs="7">
-              <Posts>
-                <Post postData={{
-                  name: "hello-world",
-                  title: "Hello World",
-                  description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
-                  img: "/banner.png"
-                }} />
-              </Posts>
+          <Hidden mdUp>
+            <Grid item xs={12}>
+              <Posts type="best" />
             </Grid>
+          </Hidden>
 
-            <Grid item xs="5">
-              <Posts>
-                <SidePost postData={{
-                  name: "side-post",
-                  title: "Tremendo blog che, esto es increible.",
-                  description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
-                  img: "/banner.png"
-                }} />
-              </Posts>
-            </Grid>
-
-
+          <Grid item xs={12} md={7}>
+            <Posts type="normal" />
           </Grid>
-        </div>
+
+          <Hidden smDown>
+            <Grid item md={5}>
+              <Posts type="best" />
+            </Grid>
+          </Hidden>
+
+
+        </Grid>
       </Layout>
     </>
-  )
-}
+  );
+};
+
+export default index;

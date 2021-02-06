@@ -69,3 +69,14 @@
 .readMore:hover {
   color: #3985ff;
 }
+
+.author {
+  display: flex;
+  place-items: center;
+  padding-top: 20px;
+}
+
+.author_name {
+  padding-left: 8px;
+  font-weight: 500;
+}

@@ -2,8 +2,23 @@ import React from 'react';
 import style from '../../../styles/posts/Post.module.css';
 import Link from 'next/link';
 import Tag from '../utils/Tag';
+import { Avatar, makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles((theme) => ({
+    small: {
+        width: "32px",
+        height: "32px",
+    },
+    large: {
+        width: "64px",
+        height: "64px",
+    },
+}));
 
 const Post = ({ postData }) => {
+
+    const theme = useStyles();
+
     return (
         <div className={style.post}>
             <Link href={`/post/${postData.name}`} passHref>
@@ -31,6 +46,11 @@ const Post = ({ postData }) => {
                         <span className={style.readMore}>Read more</span>
                     </Link>
                 </div>
+            </div>
+
+            <div className={style.author}>
+                <Avatar className={theme.small} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                <div className={style.author_name}>{postData.author}</div>
             </div>
         </div>
     );
