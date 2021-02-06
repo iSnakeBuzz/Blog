@@ -1,6 +1,8 @@
 # 05/02/2021
 
 - Changed design to one more prettier.
+- Fixed some issues with the styles.
+- Added author name in the blog preview.
 
 # 04/02/2021
 
