@@ -3,6 +3,7 @@
 - Added slugify to make the url when it needed.
 - Added more styles to get a prettier website.
 - Changed style for post page.
+- Starting with GraphQL installation.
 
 # 05/02/2021
 
