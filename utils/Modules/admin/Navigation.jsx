@@ -26,8 +26,19 @@ const Navigation = () => {
                     </Tooltip>
                 </SLink>
 
+
                 <SLink href={"/admin/posts"} className={styles.navItem} active={styles.navItemActive}>
-                    <FAIcon icon={faBook} size='2x' className={styles.navIcons} />
+
+                    <Tooltip title={
+                        <React.Fragment>
+                            <Typography color="inherit">See the entries</Typography>
+                            <em>Click to see the entries posted.</em>
+                        </React.Fragment>
+                    } placement="right" arrow>
+                        <div>
+                            <FAIcon icon={faBook} size='2x' className={styles.navIcons} />
+                        </div>
+                    </Tooltip>
                 </SLink>
 
                 <SLink href={"/admin/profile"} className={styles.navItem} active={styles.navItemActive}>

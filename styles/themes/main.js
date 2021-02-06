@@ -12,7 +12,11 @@ const theme = createMuiTheme({
     },
 
     overrides: {
-
+        MuiButton: {
+            contained: {
+                backgroundColor: "#fff"
+            }
+        }
     }
 });
 

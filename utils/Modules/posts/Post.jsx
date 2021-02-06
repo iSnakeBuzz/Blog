@@ -4,20 +4,16 @@ import Link from 'next/link';
 import Tag from '../utils/Tag';
 import { Avatar, makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     small: {
         width: "32px",
         height: "32px",
-    },
-    large: {
-        width: "64px",
-        height: "64px",
     },
 }));
 
 const Post = ({ postData }) => {
 
-    const theme = useStyles();
+    const avTheme = useStyles();
 
     return (
         <div className={style.post}>
@@ -49,8 +45,10 @@ const Post = ({ postData }) => {
             </div>
 
             <div className={style.author}>
-                <Avatar className={theme.small} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                <div className={style.author_name}>{postData.author}</div>
+                <Avatar className={avTheme.small} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                <Link href={`/profile/${postData.author}`}>
+                    <div className={style.author_name}>{postData.author}</div>
+                </Link>
             </div>
         </div>
     );

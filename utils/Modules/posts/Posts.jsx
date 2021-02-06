@@ -20,7 +20,7 @@ const Posts = ({ type }) => {
     }
 
     return (
-        <div style={getPadding('left', '30px')}>
+        <div style={getPadding(type === 'normal' ? 'right' : 'left', '30px')}>
             <div className={style.posts}>
                 {type === "normal" ? (<Post postData={{
                     name: "hello-world",

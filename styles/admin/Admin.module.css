@@ -4,7 +4,7 @@
 
 .admin nav {
   position: fixed;
-  background-color: #7b1fa2;
+  background-color: var(--primary);
 
   width: 65px;
   height: 100vh;

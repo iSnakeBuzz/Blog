@@ -6,6 +6,7 @@
   --contrast-secondary: #f2f4f6;
   --white: #ffffff;
   --muted-text: #424952;
+  --secondary-text: #c5d8ff;
   --text: #0c0c0c;
 }
 
@@ -26,4 +27,34 @@ body {
   padding: 7px 0;
   margin: 0 10px;
   border: solid 1px var(--contrast-secondary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.hideBorder {
+  border-bottom: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }

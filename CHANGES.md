@@ -1,3 +1,8 @@
+# 06/02/2021
+
+- Added slugify to make the url when it needed.
+- Changed style for post page.
+
 # 05/02/2021
 
 - Changed design to one more prettier.

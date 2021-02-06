@@ -45,7 +45,7 @@
 }
 
 .links > :hover {
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 .links > :first-child {

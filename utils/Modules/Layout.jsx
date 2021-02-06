@@ -2,15 +2,13 @@ import React from 'react';
 import { Container } from '@material-ui/core';
 import Navbar from './navigation/Navbar';
 
-const Layout = ({ children, maxWidth }) => {
+const Layout = ({ children, color }) => {
     return (
         <>
-            <Navbar />
-            <Container maxWidth={maxWidth}>
-                <main>
-                    {children}
-                </main>
-            </Container>
+            <Navbar color={color} />
+            <main>
+                {children}
+            </main>
         </>
     );
 };
