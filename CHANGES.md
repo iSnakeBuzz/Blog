@@ -4,6 +4,7 @@
 - Added more styles to get a prettier website.
 - Changed style for post page.
 - Starting with GraphQL installation.
+- Added Mongoose to connect to MongoDB.
 
 # 05/02/2021
 
