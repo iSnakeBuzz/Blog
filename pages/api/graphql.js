@@ -1,4 +1,9 @@
 import { gql, ApolloServer } from 'apollo-server-micro';
+import { mongo } from 'mongoose';
+import MongoDB from '../../connections/MongoDB';
+
+/* Connecting to MongoDB */
+MongoDB();
 
 const typeDefs = gql`
   type Query {
