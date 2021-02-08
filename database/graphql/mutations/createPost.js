@@ -11,6 +11,9 @@ export default async (_parent, args, context) => {
     /* Verifying the authorization token. If valid, continue, otherwise it throws an error.*/
     let jwt_data = jwt.verify(token, JWT_TOKEN);
 
+    /* If is not an admin return null. */
+    if (!jwt_data.admin) return null;
+
     let now = new Date();
 
     let toDb = {
