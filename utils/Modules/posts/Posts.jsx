@@ -4,11 +4,13 @@ import Post from './Post';
 import SidePost from './SidePost';
 
 import { useMediaQuery, useTheme } from '@material-ui/core';
+import PostsContext from '../context/PostsContext';
 
 const Posts = ({ type }) => {
 
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.up('md'));
+    const data = React.useContext(PostsContext);
 
     const getPadding = (direction, px) => {
         if (matches) {
@@ -19,44 +21,44 @@ const Posts = ({ type }) => {
         return {};
     }
 
+    const getPosts = (rtype) => {
+        let render = [];
+
+        if (data)
+            data.posts.map((item, id) => {
+                if (rtype === 'timeline')
+                    render.push(
+                        <Post key={id} postData={{
+                            name: item.uri,
+                            title: item.title,
+                            description: item.description,
+                            img: item.banner,
+                            author: item.created_by.username,
+                            tags: item.tags,
+                            created_at: item.created_at
+                        }} />
+                    );
+                else if (rtype === 'popular')
+                    render.push(
+                        <SidePost key={id} postData={{
+                            name: item.uri,
+                            title: item.title,
+                            description: item.description,
+                            img: item.banner,
+                            tags: item.tags,
+                            created_at: item.created_at
+                        }} />
+                    )
+            })
+
+        return render;
+    }
+
+
     return (
         <div style={getPadding(type === 'normal' ? 'right' : 'left', '30px')}>
             <div className={style.posts}>
-                {type === "normal" ? (
-
-                    <>
-                        <Post postData={{
-                            name: "hello-world",
-                            title: "Hello World",
-                            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
-                            img: "/banner.png",
-                            author: "iSnakeBuzz_"
-                        }} />
-
-                        <Post postData={{
-                            name: "hello-world",
-                            title: "Hello World",
-                            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
-                            img: "/banner.png",
-                            author: "iSnakeBuzz_"
-                        }} />
-
-                        <Post postData={{
-                            name: "hello-world",
-                            title: "Hello World",
-                            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
-                            img: "/banner.png",
-                            author: "iSnakeBuzz_"
-                        }} />
-                    </>
-
-                ) : (<SidePost postData={{
-                    name: "side-post",
-                    title: "Lorem ipsum dolor sit amet consectetur.",
-                    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
-                    img: "/banner.png",
-                    author: "iSnakeBuzz_"
-                }} />)}
+                {type === "normal" ? (getPosts('timeline')) : (getPosts('popular'))}
             </div>
         </div>
     );

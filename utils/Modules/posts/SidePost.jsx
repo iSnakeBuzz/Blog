@@ -2,8 +2,18 @@ import React from 'react';
 import style from '../../../styles/posts/SidePost.module.css';
 import Link from 'next/link';
 import Tag from '../utils/Tag';
+import { getDate, timeSince } from '../../TImeUtils';
 
 const SidePost = ({ postData }) => {
+
+    const getTags = () => {
+        let render = [];
+        postData.tags.map((item, key) => {
+            render.push(<Tag text={item} />);
+        });
+        return render;
+    }
+
     return (
         <Link href={`/post/${postData.name}`} passHref>
             <div className={style.post}>
@@ -17,8 +27,8 @@ const SidePost = ({ postData }) => {
 
                 <div className={style.content}>
                     <div className={style.tags}>
-                        <Tag text="Test" />
-                        <div style={{ marginLeft: "5px", fontWeight: "500" }}>● 4 min</div>
+                        <div className={style.tags_container}>{getTags()}</div>
+                        <div style={{ marginLeft: "5px", fontWeight: "500" }}>● {timeSince(getDate(postData.created_at))}</div>
                     </div>
 
                     <div className={style.title}>{postData.title}</div>

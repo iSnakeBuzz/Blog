@@ -3,6 +3,7 @@ import style from '../../../styles/posts/Post.module.css';
 import Link from 'next/link';
 import Tag from '../utils/Tag';
 import { Avatar, makeStyles } from '@material-ui/core';
+import { getDate, timeSince } from '../../TImeUtils';
 
 const useStyles = makeStyles(() => ({
     small: {
@@ -14,6 +15,14 @@ const useStyles = makeStyles(() => ({
 const Post = ({ postData }) => {
 
     const avTheme = useStyles();
+
+    const getTags = () => {
+        let render = [];
+        postData.tags.map((item, key) => {
+            render.push(<Tag text={item} />);
+        });
+        return render;
+    }
 
     return (
         <div className={style.post}>
@@ -27,8 +36,10 @@ const Post = ({ postData }) => {
 
             <div>
                 <div className={style.tags}>
-                    <Tag text="Test" />
-                    <div style={{ marginLeft: "5px", fontWeight: "500" }}>● 4 min</div>
+                    <div className={style.tags_container}>
+                        {getTags()}
+                    </div>
+                    <div style={{ marginLeft: "5px", fontWeight: "500" }}>● {timeSince(getDate(postData.created_at))}</div>
                 </div>
 
                 <Link href={`/post/${postData.name}`} passHref>

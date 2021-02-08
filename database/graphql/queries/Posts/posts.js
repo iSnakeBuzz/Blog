@@ -9,7 +9,7 @@ export default async (parent, args, context) => {
         populate: [{
             path: 'posts'
         }],
-    }).exec();
+    });
 
     return posts;
 }

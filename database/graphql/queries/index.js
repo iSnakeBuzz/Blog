@@ -1,5 +1,6 @@
 /* Posts */
 import posts from './Posts/posts';
+import post from './Posts/post'
 
 /* User */
 import user from './Users/user';
@@ -12,6 +13,7 @@ export default {
 
     /* Posts */
     posts,
+    post,
 
     /* Users */
     user,

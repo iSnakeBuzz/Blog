@@ -8,6 +8,7 @@ import PageDecoration from '../utils/Modules/utils/PageDecoration';
 
 /* ApolloClient */
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
+import PostsContext from '../utils/Modules/context/PostsContext';
 
 const index = ({ posts }) => {
   return (
@@ -20,27 +21,29 @@ const index = ({ posts }) => {
       <PageDecoration />
 
       <Layout>
-        <Container maxWidth="lg">
-          <div style={{ marginTop: "30px" }}>
-            <Grid container>
-              <Hidden mdUp>
-                <Grid item xs={12}>
-                  <Posts type="best" />
-                </Grid>
-              </Hidden>
+        <PostsContext.Provider value={posts}>
+          <Container maxWidth="lg">
+            <div style={{ marginTop: "35px" }}>
+              <Grid container>
+                <Hidden mdUp>
+                  <Grid item xs={12}>
+                    <Posts type="best" />
+                  </Grid>
+                </Hidden>
 
-              <Grid item xs={12} md={7}>
-                <Posts type="normal" />
+                <Grid item xs={12} md={7}>
+                  <Posts type="normal" />
+                </Grid>
+
+                <Hidden smDown>
+                  <Grid item md={5}>
+                    <Posts type="best" />
+                  </Grid>
+                </Hidden>
               </Grid>
-
-              <Hidden smDown>
-                <Grid item md={5}>
-                  <Posts type="best" />
-                </Grid>
-              </Hidden>
-            </Grid>
-          </div>
-        </Container>
+            </div>
+          </Container>
+        </PostsContext.Provider>
       </Layout>
     </>
   );
@@ -60,12 +63,15 @@ export async function getStaticProps() {
   let query = gql`
     query getPosts {
       posts(page: 0) {
+        _id
         title
         description
-        content
-        uri
+        banner
         tags
-        views
+        uri
+        created_by {
+          username
+        }
         created_at
     }
   }`;

@@ -75,6 +75,23 @@
   margin-left: 0px;
 }
 
+.tags_container {
+  display: flex;
+  place-items: center;
+}
+
+.tags_container > * {
+  margin: 0 4px;
+}
+
+.tags_container > :first-child {
+  margin-left: 0;
+}
+
+.tags_container > :last-child {
+  margin-right: 0;
+}
+
 .readMore:hover {
   color: #3985ff;
 }

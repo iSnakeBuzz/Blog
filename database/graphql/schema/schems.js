@@ -39,8 +39,8 @@ let schems = gql`
     input PostInput {
         title: String!
         description: String!
-        content: String!
         banner: String!
+        content: String!
         uri: String!
         tags: [String!]!
     }
@@ -50,6 +50,7 @@ let schems = gql`
     type Query {
         # Posts
         posts(page: Int): [Post!]!
+        post(uri: String): Post
 
         # User
         user(username: String): User
