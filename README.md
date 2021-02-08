@@ -13,7 +13,7 @@ You want to see a demo? [Click here](https://blog.isnakebuzz.com).
 </p>
 
 <div>
-    <h3>Created with the following technologies.</h3>
+    <h4>Created with the following technologies.</h4>
     <p>
         <img height="32px" src="https://i.imgur.com/7L5IHGl.png" alt="NodeJS"/> 
         <img height="32px" src="https://i.imgur.com/mQi1fFq.png" alt="React"/> 
