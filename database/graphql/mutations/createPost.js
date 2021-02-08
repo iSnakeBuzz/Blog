@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import Post from '../../models/Post';
+import User from '../../models/User';
 
 const JWT_TOKEN = process.env.JWT;
 
@@ -21,6 +22,10 @@ export default async (_parent, args, context) => {
 
     let post = new Post(toDb);
     await post.save();
+
+    let userDB = await User.findOne({ username: jwt_data.username });
+    userDB.posts.push(post._id);
+    userDB.save();
 
     return post;
 }
