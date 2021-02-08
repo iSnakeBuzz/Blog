@@ -47,7 +47,7 @@ let schems = gql`
 
     type Query {
         # Posts
-        posts(page: int): [Post!]!
+        posts(page: Int): [Post!]!
 
         # User
         user(username: String): User
