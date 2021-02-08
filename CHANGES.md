@@ -1,3 +1,8 @@
+# 08/02/2021
+
+- Added JWT for verify sessions.
+- 
+
 # 06/02/2021
 
 - Added slugify to make the url when it needed.

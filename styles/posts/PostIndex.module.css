@@ -9,13 +9,6 @@
   color: var(--white);
 }
 
-.post {
-  border: solid 1px #a0a0a0;
-
-  border-radius: 6px;
-  background-color: var(--white);
-}
-
 .title_container {
   display: grid;
   place-items: center;

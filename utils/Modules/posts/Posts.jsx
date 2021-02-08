@@ -22,13 +22,35 @@ const Posts = ({ type }) => {
     return (
         <div style={getPadding(type === 'normal' ? 'right' : 'left', '30px')}>
             <div className={style.posts}>
-                {type === "normal" ? (<Post postData={{
-                    name: "hello-world",
-                    title: "Hello World",
-                    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
-                    img: "/banner.png",
-                    author: "iSnakeBuzz_"
-                }} />) : (<SidePost postData={{
+                {type === "normal" ? (
+
+                    <>
+                        <Post postData={{
+                            name: "hello-world",
+                            title: "Hello World",
+                            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
+                            img: "/banner.png",
+                            author: "iSnakeBuzz_"
+                        }} />
+
+                        <Post postData={{
+                            name: "hello-world",
+                            title: "Hello World",
+                            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
+                            img: "/banner.png",
+                            author: "iSnakeBuzz_"
+                        }} />
+
+                        <Post postData={{
+                            name: "hello-world",
+                            title: "Hello World",
+                            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
+                            img: "/banner.png",
+                            author: "iSnakeBuzz_"
+                        }} />
+                    </>
+
+                ) : (<SidePost postData={{
                     name: "side-post",
                     title: "Lorem ipsum dolor sit amet consectetur.",
                     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt officiis modi voluptates dolor velit sit suscipit hic voluptatibus dolores non at, nisi tempora! Quaerat impedit nostrum sunt culpa saepe eaque.",
