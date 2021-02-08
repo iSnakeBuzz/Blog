@@ -9,7 +9,7 @@ export default async (parent, args, context) => {
 
     let password = userInput.password;
 
-    var hashedPassword = bcrypt.hashSync(password, salt);
+    var hashedPassword = bcrypt.hashSync(password, BCRYPT_SALT);
 
     let userToAdd = {
         ...userInput,
