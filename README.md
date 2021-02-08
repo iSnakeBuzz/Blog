@@ -4,6 +4,7 @@
     <img alt="Stars" src="https://img.shields.io/github/stars/iSnakeBuzz/Blog?style=for-the-badge" />
     <img alt="Commits Activity" src="https://img.shields.io/github/commit-activity/m/iSnakeBuzz/Blog?style=for-the-badge" />
 </p>
+
 ## 🌍 Blog
 
 A very simple blog created with NextJS and MongoDB.
