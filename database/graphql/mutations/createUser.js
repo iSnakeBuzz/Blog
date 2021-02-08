@@ -1,10 +1,12 @@
 import User from '../../models/User';
 
 export default async (parent, args, context) => {
+    let userInput = args.user;
     let date = new Date();
 
+    let password =;
+
     let userToAdd = {
-        ...args.user,
         created_at: date,
         updated_at: date
     }
