@@ -21,8 +21,7 @@ body {
 
   color: var(--text);
   background-color: var(--background) !important;
-
-  background-image: url("/utils/site-background.svg");
+  
   background-position: center bottom;
   background-repeat: repeat-y;
   background-size: 100%;

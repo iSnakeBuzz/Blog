@@ -3,9 +3,9 @@ import AdminLayout from '../../utils/Modules/admin/AdminLayout';
 
 const index = () => {
     return (
-        <AdminLayout>
-            Admin site
-        </AdminLayout>
+        <div>
+            Hello world
+        </div>
     );
 };
 

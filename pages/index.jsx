@@ -45,6 +45,12 @@ const index = ({ posts }) => {
           </Container>
         </PostsContext.Provider>
       </Layout>
+
+      <style jsx global>{`
+        html, body {
+          background-image: url("/utils/site-background.svg");
+        }
+      `}</style>
     </>
   );
 };
