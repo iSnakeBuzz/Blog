@@ -23,14 +23,15 @@ let schems = gql`
         updated_at: String!
     }
 
-    type Query {
-        posts: [Post!]!
-        user(username: String): User
-    }
+    # Inputs
 
     input UserInput {
         username: String!
         password: String!
+    }
+
+    input SessionInput {
+        jwt: String!
     }
 
     input PostInput {
@@ -39,6 +40,19 @@ let schems = gql`
         content: String!
         uri: String!
         tags: [String!]!
+    }
+
+    # Query & Mutation declarations.
+
+    type Query {
+        # Posts
+        posts: [Post!]!
+
+        # User
+        user(username: String): User
+
+        # Auth
+        validateJwt():
     }
 
     type Mutation {
