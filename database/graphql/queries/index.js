@@ -6,6 +6,7 @@ import user from './Users/user';
 
 /* Auth */
 import validateJwt from './Auth/validateJwt';
+import login from './Auth/login'
 
 export default {
 
@@ -16,5 +17,6 @@ export default {
     user,
 
     /* Auth */
-    validateJwt
+    validateJwt,
+    login
 };
