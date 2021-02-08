@@ -10,7 +10,15 @@ const resolvers = {
     Mutation: mutations
 };
 
-const apolloServer = new ApolloServer({ typeDefs: schems, resolvers });
+const apolloServer = new ApolloServer({
+    resolvers,
+    typeDefs: schems,
+    context: ({ req }) => {
+        const authorization = req.headers.authorization || '';
+        return { authorization };
+    }
+});
+
 const handler = apolloServer.createHandler({ path: "/api/graphql" });
 
 export const config = {

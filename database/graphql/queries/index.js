@@ -1,7 +1,20 @@
-import posts from './posts';
-import user from './user';
+/* Posts */
+import posts from './Posts/posts';
+
+/* User */
+import user from './Users/user';
+
+/* Auth */
+import validateJwt from './Auth/validateJwt';
 
 export default {
+
+    /* Posts */
     posts,
-    user
+
+    /* Users */
+    user,
+
+    /* Auth */
+    validateJwt
 };

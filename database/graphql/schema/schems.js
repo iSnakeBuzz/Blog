@@ -23,15 +23,16 @@ let schems = gql`
         updated_at: String!
     }
 
+    type Session {
+        valid: Boolean!
+        jwt: String
+    }
+
     # Inputs
 
     input UserInput {
         username: String!
         password: String!
-    }
-
-    input SessionInput {
-        jwt: String!
     }
 
     input PostInput {
@@ -52,7 +53,8 @@ let schems = gql`
         user(username: String): User
 
         # Auth
-        validateJwt():
+        validateJwt: Session
+        login(user: UserInput): User
     }
 
     type Mutation {

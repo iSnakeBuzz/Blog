@@ -1,4 +1,4 @@
-import User from '../../models/User';
+import User from '../../../models/User';
 
 export default async (parent, args, context) => {
     let user = await User.findOne({ username: args.username }).populate('posts').exec();
