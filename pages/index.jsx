@@ -6,7 +6,10 @@ import Posts from '../utils/Modules/posts/Posts'
 import { Container, Grid, Hidden } from '@material-ui/core';
 import PageDecoration from '../utils/Modules/utils/PageDecoration';
 
-const index = () => {
+/* ApolloClient */
+import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
+
+const index = ({ posts }) => {
   return (
     <>
       <Head>
@@ -18,7 +21,7 @@ const index = () => {
 
       <Layout>
         <Container maxWidth="lg">
-          <div style={{ marginTop: "25px" }}>
+          <div style={{ marginTop: "30px" }}>
             <Grid container>
               <Hidden mdUp>
                 <Grid item xs={12}>
@@ -45,7 +48,35 @@ const index = () => {
 
 
 export async function getStaticProps() {
-  
+  let apiURL = process.env.API_URL;
+
+  if (!apiURL) return { props: {} };
+
+  const client = new ApolloClient({
+    uri: apiURL,
+    cache: new InMemoryCache(),
+  })
+
+  let query = gql`
+    query getPosts {
+      posts(page: 0) {
+        title
+        description
+        content
+        uri
+        tags
+        views
+        created_at
+    }
+  }`;
+
+  const { data } = await client.query({ query });
+
+  return {
+    props: {
+      posts: data
+    }
+  }
 }
 
 export default index;
