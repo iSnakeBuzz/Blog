@@ -1,7 +1,12 @@
 # 08/02/2021
 
 - Added JWT for verify sessions.
-- 
+- Added createPost method.
+- Added verifyJwt to verify json web token.
+- Added login method.
+- Added bcrypt to improve security of passwords.
+- Moved GraphQL queries & mutations to separated files.
+- Working on the frontend to use the GraphQL API.
 
 # 06/02/2021
 
