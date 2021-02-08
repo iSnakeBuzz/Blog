@@ -16,14 +16,14 @@ export default async (_parent, args, context) => {
     if (!validPassword) return null;
 
     /* Generating jwt */
-    let signedJWt = jwt.sign({
-        _id: userDB._id,
+    let signedJWT = jwt.sign({
+        id: userDB['_id'],
         username: userDB.username
     }, JWT_TOKEN, { expiresIn: '12h' });
 
-    /* Inserting all in the same json and returning it */
-    return {
-        ...userDB,
-        jwt: signedJWt
-    }
+
+    userDB.jwt = signedJWT;
+
+    console.debug("Returning..", userDB, signedJWT)
+    return userDB;
 }
