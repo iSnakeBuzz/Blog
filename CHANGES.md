@@ -7,6 +7,7 @@
 - Added bcrypt to improve security of passwords.
 - Moved GraphQL queries & mutations to separated files.
 - Working on the frontend to use the GraphQL API.
+- Added admin login page.
 
 # 06/02/2021
 
