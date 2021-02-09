@@ -19,7 +19,7 @@ const Post = ({ postData }) => {
     const getTags = () => {
         let render = [];
         postData.tags.map((item, key) => {
-            render.push(<Tag text={item} />);
+            render.push(<Tag key={key} text={item} />);
         });
         return render;
     }

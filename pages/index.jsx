@@ -4,69 +4,25 @@ import Head from 'next/head'
 import Layout from '../utils/Modules/Layout'
 import Posts from '../utils/Modules/posts/Posts'
 import { Container, Grid, Hidden } from '@material-ui/core';
-import PageDecoration from '../utils/Modules/utils/PageDecoration';
 
 /* ApolloClient */
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 import PostsContext from '../utils/Modules/context/PostsContext';
+import IndexContainer from '../utils/Modules/index/IndexContainer';
 
-const index = ({ posts }) => {
-  return (
-    <>
-      <Head>
-        <title>Blog</title>
-      </Head>
+const index = () => {
 
-      {/* Page decoration */}
-      <PageDecoration />
+  const [data, setData] = React.useState({
+    posts: []
+  });
 
-      <Layout>
-        <PostsContext.Provider value={posts}>
-          <Container maxWidth="lg">
-            <div style={{ marginTop: "35px" }}>
-              <Grid container>
-                <Hidden mdUp>
-                  <Grid item xs={12}>
-                    <Posts type="best" />
-                  </Grid>
-                </Hidden>
+  React.useEffect(async () => {
+    const client = new ApolloClient({
+      uri: process.env.API_ENDPOINT,
+      cache: new InMemoryCache(),
+    })
 
-                <Grid item xs={12} md={7}>
-                  <Posts type="normal" />
-                </Grid>
-
-                <Hidden smDown>
-                  <Grid item md={5}>
-                    <Posts type="best" />
-                  </Grid>
-                </Hidden>
-              </Grid>
-            </div>
-          </Container>
-        </PostsContext.Provider>
-      </Layout>
-
-      <style jsx global>{`
-        html, body {
-          background-image: url("/utils/site-background.svg");
-        }
-      `}</style>
-    </>
-  );
-};
-
-
-export async function getStaticProps() {
-  let apiURL = process.env.API_URL;
-
-  if (!apiURL) return { props: {} };
-
-  const client = new ApolloClient({
-    uri: apiURL,
-    cache: new InMemoryCache(),
-  })
-
-  let query = gql`
+    let query = gql`
     query getPosts {
       posts(page: 0) {
         _id
@@ -82,13 +38,30 @@ export async function getStaticProps() {
     }
   }`;
 
-  const { data } = await client.query({ query });
+    const { data } = await client.query({ query });
+    console.log("Home Data:", data)
+    setData(data);
+  }, [])
 
-  return {
-    props: {
-      posts: data
-    }
-  }
-}
+  return (
+    <>
+      <Head>
+        <title>Blog</title>
+      </Head>
+
+      <PostsContext.Provider value={data}>
+        <Layout>
+          <IndexContainer />
+        </Layout>
+      </PostsContext.Provider>
+
+      <style jsx global>{`
+        html, body {
+          background-image: url("/utils/site-background.svg");
+        }
+      `}</style>
+    </>
+  );
+};
 
 export default index;

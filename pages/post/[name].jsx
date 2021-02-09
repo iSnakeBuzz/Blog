@@ -30,9 +30,14 @@ const index = ({ data }) => {
     );
 };
 
+export async function getStaticPaths() {
+    return {
+        paths: [],
+        fallback: true,
+    }
+}
 
-
-export async function getServerSideProps({ params, res }) {
+export async function getStaticProps({ params, res }) {
     let apiURL = process.env.API_URL;
 
     if (!apiURL) return { props: {} };
