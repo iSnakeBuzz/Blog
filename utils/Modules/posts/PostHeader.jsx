@@ -3,7 +3,7 @@ import { Avatar, Container } from '@material-ui/core';
 
 import style from '../../../styles/posts/PostIndex.module.css';
 import PostContext from '../context/PostContext';
-import { getDate, timeSince } from '../../TImeUtils';
+import { getDate, timeSince } from '../../TimeUtils';
 
 const PostHeader = () => {
 
