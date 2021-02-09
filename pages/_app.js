@@ -4,8 +4,9 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../styles/themes/main';
 
 import '../styles/Shark.css'
+import { parseCookie } from '../utils/CookieUtils';
 
-export default function MyApp(props) {
+const MyApp = (props) => {
   const { Component, pageProps } = props;
 
   React.useEffect(() => {
@@ -25,7 +26,15 @@ export default function MyApp(props) {
   );
 }
 
+MyApp.getInitialProps = async ({ ctx }) => {
+  const { req } = ctx;
+  const cookies = req ? req.cookies : parseCookie(document.cookie);
+  return { pageProps: { cookies } };
+}
+
 MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
   pageProps: PropTypes.object.isRequired,
 };
+
+export default MyApp;

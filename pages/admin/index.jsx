@@ -1,8 +1,9 @@
 import React from 'react';
+import Router from 'next/router'
 
 import style from '../../styles/admin/Auth.module.css'
 
-const index = () => {
+const index = ({ cookies }) => {
     return (
         <>
             <div className={style.auth_container}>
