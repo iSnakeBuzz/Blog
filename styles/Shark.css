@@ -25,10 +25,14 @@ body {
 
   color: var(--text);
   background-color: var(--background) !important;
-  
+
   background-position: center bottom;
   background-repeat: repeat-y;
   background-size: 100%;
+}
+
+p {
+  margin: 0;
 }
 
 .vhr {

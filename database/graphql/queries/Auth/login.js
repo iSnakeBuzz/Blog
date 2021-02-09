@@ -6,6 +6,7 @@ const JWT_TOKEN = process.env.JWT;
 
 export default async (_parent, args, context) => {
     let userInput = args.user;
+    if (!(userInput.username && userInput.password)) return null;
 
     /* Getting user from the database. */
     let userDB = await User.findOne({ username: userInput.username });

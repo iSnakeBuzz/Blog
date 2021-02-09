@@ -1,11 +1,18 @@
 import React from 'react';
+import { Container } from '@material-ui/core';
 import AdminLayout from '../../../utils/Modules/admin/AdminLayout';
 import withAdmin from '../../../utils/Modules/admin/withAdmin';
+import ReactMarkdown from 'react-markdown';
 
 const index = () => {
     return (
         <AdminLayout>
-            Draft a new post.
+            <Container maxWidth="lg">
+                <div>
+                    <ReactMarkdown children={`xdasdasdads`} />
+                </div>
+
+            </Container>
         </AdminLayout>
     );
 };
