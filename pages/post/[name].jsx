@@ -10,8 +10,6 @@ import PostContext from '../../utils/Modules/context/PostContext';
 import PostContent from '../../utils/Modules/posts/PostContent';
 import PostBanner from '../../utils/Modules/posts/PostBanner';
 
-import Router from 'next/router';
-
 const index = ({ data }) => {
 
     React.useEffect(() => {

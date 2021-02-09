@@ -3,7 +3,7 @@ import style from '../../../styles/posts/Post.module.css';
 import Link from 'next/link';
 import Tag from '../utils/Tag';
 import { Avatar, makeStyles } from '@material-ui/core';
-import { getDate, timeSince } from '../../TImeUtils';
+import { getDate, timeSince } from '../../TimeUtils';
 
 const useStyles = makeStyles(() => ({
     small: {
