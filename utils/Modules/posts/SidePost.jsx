@@ -2,7 +2,7 @@ import React from 'react';
 import style from '../../../styles/posts/SidePost.module.css';
 import Link from 'next/link';
 import Tag from '../utils/Tag';
-import { getDate, timeSince } from '../../TImeUtils';
+import { getDate, timeSince } from '../../TimeUtils';
 
 const SidePost = ({ postData }) => {
 
