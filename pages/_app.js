@@ -26,11 +26,11 @@ const MyApp = (props) => {
   );
 }
 
-MyApp.getInitialProps = async ({ ctx }) => {
+/* MyApp.getInitialProps = async ({ ctx }) => {
   const { req } = ctx;
   const cookies = req ? req.cookies : parseCookie(document.cookie);
   return { pageProps: { cookies } };
-}
+} */
 
 MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,

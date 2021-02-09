@@ -1,5 +1,5 @@
 import React from 'react';
-import Router from 'next/router'
+import withAdmin from '../../utils/Modules/admin/withAdmin';
 
 import style from '../../styles/admin/Auth.module.css'
 
@@ -33,13 +33,4 @@ const index = ({ cookies }) => {
     );
 };
 
-export async function getServerSideProps({ params, res }) {
-    let API_URL = process.env.API_URL;
-    return {
-        props: {
-            API_URL
-        }
-    }
-}
-
-export default index;
+export default withAdmin({ needAuth: false, redirect: '/admin/new' }, index);
