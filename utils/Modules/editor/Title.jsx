@@ -2,7 +2,7 @@ import { Grid } from '@material-ui/core';
 import React from 'react';
 import Slugify from 'slugify';
 
-const Title = () => {
+const Title = ({ onChange }) => {
 
     const [title, setTitle] = React.useState("");
     const [uri, setUri] = React.useState("");
@@ -15,6 +15,8 @@ const Title = () => {
 
         setTitle(title);
         setUri(normalizedTitle);
+
+        handleChange();
     }
 
     const onUriChange = (e) => {
@@ -22,6 +24,12 @@ const Title = () => {
             lower: true
         });
         setUri(normalizedTitle);
+
+        handleChange();
+    }
+
+    const handleChange = () => {
+        onChange({ title, uri });
     }
 
     return (

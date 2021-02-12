@@ -16,14 +16,14 @@ const Banner = ({ onChange }) => {
         setValue(e.target.value);
 
         if (onChange)
-            onChange(type, value);
+            onChange({ type, value });
     }
 
 
     return (
         <Grid container spacing={2}>
             <Grid item xs={9}>
-                <input onChange={onInputChange} type={type === "image" ? "file" : "text"} placeholder={type === "image" ? "Upload file." : type === "twitch" ? "Twitch Link" : "YouTube Link."} />
+                <input onChange={onInputChange} type={"text"} placeholder={type === "image" ? "Image Link." : type === "twitch" ? "Twitch Link" : "YouTube Link."} />
             </Grid>
             <Grid item xs={3}>
                 <select onChange={onSelectChange} defaultValue={type}>
