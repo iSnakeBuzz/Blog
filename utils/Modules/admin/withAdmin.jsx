@@ -17,7 +17,7 @@ const initialProps = async ({ needAuth, redirect }, Page, { req, res }) => {
     let logged = cookies.authorization ? true : false;
     let wantRedirect = logged !== needAuth;
 
-    console.log('Redirect:', wantRedirect)
+    // console.log('Redirect:', wantRedirect, cookies)
     if (wantRedirect) return pushTo({ res, redirect });
 
     if (Page.getInitialProps) {
