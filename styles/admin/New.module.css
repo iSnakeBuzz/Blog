@@ -20,11 +20,12 @@
 .title {
   font-weight: 500;
   font-size: 24px;
+  margin-right: auto;
 }
 
 .buttons {
-  display: grid;
-  place-items: flex-end;
+  display: flex;
+  place-items: center;
 
   margin-top: 40px;
 }

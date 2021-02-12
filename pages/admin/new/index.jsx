@@ -25,12 +25,11 @@ const index = () => {
         <AdminLayout>
             <Container maxWidth="lg">
                 <div className={style.buttons}>
+                    <div className={style.title}>Writing a new entry</div>
                     <SharkButton color="primary" onClick={onPublish}>PUBLISH</SharkButton>
                 </div>
 
                 <form className={style.container}>
-                    <div className={style.title}>Creating a post..</div>
-
                     <Title />
 
                     <input type="text" name="description" placeholder="Description" />
