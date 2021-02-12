@@ -1,12 +1,17 @@
 import React from 'react';
-import { Container, Grid } from '@material-ui/core';
-import AdminLayout from '../../../utils/Modules/admin/AdminLayout';
 import withAdmin from '../../../utils/Modules/admin/withAdmin';
+
+import AdminLayout from '../../../utils/Modules/admin/AdminLayout';
 import ReactMarkdown from 'react-markdown';
-import SharkEditor from '../../../utils/Modules/editor/SharkEditor';
-import style from '../../../styles/admin/New.module.css'
-import Banner from '../../../utils/Modules/editor/Banner';
+
 import Title from '../../../utils/Modules/editor/Title';
+import Banner from '../../../utils/Modules/editor/Banner';
+import SharkEditor from '../../../utils/Modules/editor/SharkEditor';
+import SharkButton from '../../../utils/Modules/utils/SharkButton';
+
+import { Container } from '@material-ui/core';
+
+import style from '../../../styles/admin/New.module.css'
 
 const index = () => {
     const [content, setContent] = React.useState('');
@@ -14,6 +19,10 @@ const index = () => {
     return (
         <AdminLayout>
             <Container maxWidth="lg">
+                <div className={style.buttons}>
+                    <SharkButton color="primary">PUBLISH</SharkButton>
+                </div>
+
                 <form className={style.container}>
                     <div className={style.title}>Creating a post..</div>
 
