@@ -12,9 +12,7 @@ export const parseCookie = (cookies) => {
 }
 
 export const deleteCookie = (name) => {
-    var d = new Date();
-    var expires = "expires=" + d.toUTCString();
-    document.cookie = name + "=;" + expires + ";path=/";
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 
 export const setCookie = (name, value, exp) => {
