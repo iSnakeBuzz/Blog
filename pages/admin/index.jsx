@@ -6,6 +6,7 @@ import Cookies from 'universal-cookie';
 
 import style from '../../styles/admin/Auth.module.css'
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
+import { setCookie } from '../../utils/CookieUtils';
 
 const index = ({ cookies }) => {
 
@@ -34,15 +35,12 @@ const index = ({ cookies }) => {
         client.query({ query, variables: { ...formData } }).then(res => {
             let { login } = res.data;
             if (login && login.jwt) {
-                console.log("Home Data:", login)
-                const cookies = new Cookies();
-                cookies.set('authorization', login.jwt);
+                setCookie('authorization', login.jwt);
                 Router.push('/admin/new');
             };
         }).catch(e => {
             console.log("error", e);
         });
-
     }
 
     const serialize_form = form => JSON.stringify(
