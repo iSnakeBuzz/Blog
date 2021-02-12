@@ -2,7 +2,6 @@ import React from 'react';
 import Router from 'next/router';
 
 import withAdmin from '../../utils/Modules/admin/withAdmin';
-import Cookies from 'universal-cookie';
 
 import style from '../../styles/admin/Auth.module.css'
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
