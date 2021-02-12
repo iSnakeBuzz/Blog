@@ -1,3 +1,5 @@
+import Cookies from 'universal-cookie';
+
 export const parseCookie = (cookies) => {
     var jCookies = {};
 
@@ -12,14 +14,11 @@ export const parseCookie = (cookies) => {
 }
 
 export const deleteCookie = (name) => {
-    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    const cookies = new Cookies();
+    cookies.remove(name, { expires: new Date() })
 }
 
-export const setCookie = (name, value, exp) => {
-    let date = new Date();
-    date.setTime(date.getTime() + (exp * 60 * 60 * 1000));
-
-    let expires = "expires=" + date.toUTCString();
-
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+export const setCookie = (name, value) => {
+    const cookies = new Cookies();
+    cookies.set(name, value, {})
 }
