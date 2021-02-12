@@ -14,11 +14,22 @@ import { Container } from '@material-ui/core';
 import style from '../../../styles/admin/New.module.css'
 
 const index = () => {
-    const [content, setContent] = React.useState('');
+
+    const [state, setState] = React.useState({
+        title: undefined,
+        description: undefined,
+        content: undefined,
+    });
 
 
     const onPublish = async (e) => {
         console.log("Publishing...")
+    }
+
+    const onAnythingChange = (type, event) => {
+        if (type === "") {
+
+        }
     }
 
     return (
@@ -30,17 +41,17 @@ const index = () => {
                 </div>
 
                 <form className={style.container}>
-                    <Title />
+                    <Title onChange={(e) => onAnythingChange('title', e)} />
 
                     <input type="text" name="description" placeholder="Description" />
 
-                    <Banner />
+                    <Banner onChange={(e) => onAnythingChange('banner', e)} />
 
-                    <SharkEditor placeholder="Content here... **Hello world**" onChange={(e) => setContent(e.target.value)} />
+                    <SharkEditor placeholder="Content here... **Hello world**" onChange={(e) => onAnythingChange('content', e)} />
                 </form>
 
                 <div className={style.container}>
-                    <ReactMarkdown children={content} skipHtml={false} escapeHtml={false} />
+                    <ReactMarkdown children={state.content} skipHtml={false} escapeHtml={false} />
                 </div>
             </Container>
         </AdminLayout>
