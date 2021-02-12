@@ -16,11 +16,16 @@ import style from '../../../styles/admin/New.module.css'
 const index = () => {
     const [content, setContent] = React.useState('');
 
+
+    const onPublish = async (e) => {
+        console.log("Publishing...")
+    }
+
     return (
         <AdminLayout>
             <Container maxWidth="lg">
                 <div className={style.buttons}>
-                    <SharkButton color="primary">PUBLISH</SharkButton>
+                    <SharkButton color="primary" onClick={onPublish}>PUBLISH</SharkButton>
                 </div>
 
                 <form className={style.container}>
