@@ -3,10 +3,10 @@
 - Changed CSS of the Login.
 - Changed CSS of the Editor.
 - Added Banner.jsx to work with multiple options in the banner.
-- 
-- 
-- 
-- 
+- Moved Title inputs to a diferent module.
+-
+-
+-
 
 # 08/02/2021
 
