@@ -37,7 +37,6 @@ const Navigation = () => {
 
 
                 <SLink href={"/admin/posts"} className={styles.navItem} active={styles.navItemActive}>
-
                     <Tooltip title={
                         <React.Fragment>
                             <Typography color="inherit">See the entries</Typography>
@@ -52,7 +51,9 @@ const Navigation = () => {
 
                 <div className={styles.profileItems}>
                     <SLink href={"/admin/profile"} className={styles.navItem} active={styles.navItemActive}>
-                        <FAIcon icon={faUser} size='2x' className={styles.navIcons} />
+                        <div>
+                            <FAIcon icon={faUser} size='2x' className={styles.navIcons} />
+                        </div>
                     </SLink>
                     <FAIcon icon={faSignOutAlt} onClick={handleLogout} size='2x' className={styles.navIcons} />
                 </div>

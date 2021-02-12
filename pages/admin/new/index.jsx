@@ -5,6 +5,7 @@ import withAdmin from '../../../utils/Modules/admin/withAdmin';
 import ReactMarkdown from 'react-markdown';
 import SharkEditor from '../../../utils/Modules/editor/SharkEditor';
 import style from '../../../styles/admin/New.module.css'
+import Banner from '../../../utils/Modules/editor/Banner';
 
 const index = () => {
     const [content, setContent] = React.useState('');
@@ -16,16 +17,17 @@ const index = () => {
                     <div className={style.title}>Creating a post..</div>
 
                     <Grid container spacing={2}>
-                        <Grid item xs="9">
+                        <Grid item xs={9}>
                             <input type="text" name="title" placeholder="Title" />
                         </Grid>
-                        <Grid item xs="3">
+                        <Grid item xs={3}>
                             <input type="text" name="uri" />
                         </Grid>
                     </Grid>
 
                     <input type="text" name="description" placeholder="Description" />
-                    <input type="file" />
+
+                    <Banner />
 
                     <SharkEditor placeholder="Content here... **Hello world**" onChange={(e) => setContent(e.target.value)} />
                 </form>
