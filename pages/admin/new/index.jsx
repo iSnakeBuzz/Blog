@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import SharkEditor from '../../../utils/Modules/editor/SharkEditor';
 import style from '../../../styles/admin/New.module.css'
 import Banner from '../../../utils/Modules/editor/Banner';
+import Title from '../../../utils/Modules/editor/Title';
 
 const index = () => {
     const [content, setContent] = React.useState('');
@@ -16,14 +17,7 @@ const index = () => {
                 <form className={style.container}>
                     <div className={style.title}>Creating a post..</div>
 
-                    <Grid container spacing={2}>
-                        <Grid item xs={9}>
-                            <input type="text" name="title" placeholder="Title" />
-                        </Grid>
-                        <Grid item xs={3}>
-                            <input type="text" name="uri" />
-                        </Grid>
-                    </Grid>
+                    <Title />
 
                     <input type="text" name="description" placeholder="Description" />
 
