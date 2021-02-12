@@ -1,4 +1,4 @@
-import Router from 'next/dist/next-server/lib/router/router';
+import Router from 'next/router';
 import { parseCookie } from '../../CookieUtils';
 
 const withAdmin = (props, Page) => {

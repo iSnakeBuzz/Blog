@@ -4,12 +4,20 @@ import SLink from '../navigation/SLink';
 import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faUser } from '@fortawesome/free-regular-svg-icons';
 
-import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { Tooltip, Typography } from '@material-ui/core';
+
+import Router from 'next/router'
 
 import styles from '../../../styles/admin/Admin.module.css';
 
 const Navigation = () => {
+
+    const handleLogout = (e) => {
+        document.cookie = "";
+        Router.push('/admin/');
+    }
+
     return (
         <nav>
             <div className={styles.navItems}>
@@ -41,9 +49,12 @@ const Navigation = () => {
                     </Tooltip>
                 </SLink>
 
-                <SLink href={"/admin/profile"} className={styles.navItem} active={styles.navItemActive}>
-                    <FAIcon icon={faUser} size='2x' className={styles.navIcons} />
-                </SLink>
+                <div className={styles.profileItems}>
+                    <SLink href={"/admin/profile"} className={styles.navItem} active={styles.navItemActive}>
+                        <FAIcon icon={faUser} size='2x' className={styles.navIcons} />
+                    </SLink>
+                    <FAIcon icon={faSignOutAlt} onClick={handleLogout} size='2x' className={styles.navIcons} />
+                </div>
             </div>
         </nav>
     );

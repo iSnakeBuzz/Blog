@@ -34,7 +34,22 @@
 }
 
 .navItemActive {
-  
+}
+
+.profileItems {
+  display: grid;
+}
+
+.profileItems > * {
+  margin: 10px 0px;
+}
+
+.profileItems > :first-child {
+  margin-top: 0px;
+}
+
+.profileItems > :last-child {
+  margin-bottom: 0px;
 }
 
 .navIcons {

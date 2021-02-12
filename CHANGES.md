@@ -1,3 +1,10 @@
+# 12/02/2021
+
+- 
+- 
+- 
+- 
+
 # 08/02/2021
 
 - Added JWT for verify sessions.
