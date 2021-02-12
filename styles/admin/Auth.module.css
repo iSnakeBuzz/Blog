@@ -21,7 +21,8 @@
 }
 
 .auth_form {
-  padding-top: 35px;
+  display: grid;
+  padding-top: 30px;
 }
 
 .auth_form button {
@@ -45,7 +46,7 @@
 }
 
 .auth_form > * {
-  margin: 25px 0px;
+  margin: 10px 0px;
 }
 
 .auth_form > :first-child {
@@ -53,6 +54,6 @@
 }
 
 .auth_form > :last-child {
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 0;
 }

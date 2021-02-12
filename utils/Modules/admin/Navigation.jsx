@@ -10,11 +10,12 @@ import { Tooltip, Typography } from '@material-ui/core';
 import Router from 'next/router'
 
 import styles from '../../../styles/admin/Admin.module.css';
+import { deleteCookie } from '../../CookieUtils';
 
 const Navigation = () => {
 
     const handleLogout = (e) => {
-        document.cookie = "";
+        deleteCookie('authorization');
         Router.push('/admin/');
     }
 
