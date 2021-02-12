@@ -5,9 +5,9 @@ const SharkButton = ({ children, onClick, color = "primary" }) => {
     const colorCss = color === "white" ? "bg-white" : color === "primary" ? "bg-primary" : "bg-secondary";
 
     return (
-        <div className={`shark_button ${colorCss}`} onClick={onClick}>
+        <button className={colorCss} onClick={onClick}>
             {children}
-        </div>
+        </button>
     );
 };
 
