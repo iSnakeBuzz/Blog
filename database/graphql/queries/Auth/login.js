@@ -19,7 +19,8 @@ export default async (_parent, args, context) => {
     /* Generating jwt */
     let signedJWT = jwt.sign({
         id: userDB['_id'],
-        username: userDB.username
+        username: userDB.username,
+        admin: userDB.admin
     }, JWT_TOKEN, { expiresIn: '12h' });
 
 

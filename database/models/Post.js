@@ -15,6 +15,10 @@ const PostSchema = new Schema({
         type: String,
         require: true
     },
+    banner_type: {
+        type: String,
+        require: true
+    },
 
     content: {
         type: String,

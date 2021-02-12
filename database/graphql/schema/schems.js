@@ -15,6 +15,7 @@ let schems = gql`
         title: String!
         description: String!
         banner: String!
+        banner_type: String!
         content: String!
         uri: String!
         tags: [String!]!
@@ -40,6 +41,7 @@ let schems = gql`
         title: String!
         description: String!
         banner: String!
+        banner_type: String!
         content: String!
         uri: String!
         tags: [String!]!
