@@ -7,7 +7,6 @@ const Title = () => {
     const [title, setTitle] = React.useState("");
     const [uri, setUri] = React.useState("");
 
-
     const onTitleChange = (e) => {
         let title = e.target.value;
         let normalizedTitle = Slugify(title, {
