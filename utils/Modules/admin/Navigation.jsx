@@ -1,5 +1,6 @@
 import React from 'react';
 import SLink from '../navigation/SLink';
+import { deleteCookie } from '../../CookieUtils';
 
 import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faUser } from '@fortawesome/free-regular-svg-icons';
@@ -10,7 +11,6 @@ import { Tooltip, Typography } from '@material-ui/core';
 import Router from 'next/router'
 
 import styles from '../../../styles/admin/Admin.module.css';
-import { deleteCookie } from '../../CookieUtils';
 
 const Navigation = () => {
 
