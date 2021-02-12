@@ -76,17 +76,28 @@ p {
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
-.shark_button {
+button {
   padding: 10px 20px;
+
   font-weight: 600;
   cursor: pointer;
+
+  border: none;
 
   transition: all 250ms ease-in-out;
 }
 
-.shark_button:hover,
-.bg-white:hover {
+button.bg-white:hover {
   background-color: var(--contrast-primary) !important;
+}
+
+button.bg-primary:hover  {
+  background-color: var(--primary-clear) !important;
+}
+
+button:focus {
+  outline: none;
+  border: none;
 }
 
 input[type="text"],
@@ -157,5 +168,6 @@ select {
   -moz-appearance: none;
   appearance: none;
 
-  background: url("/icons/angle-down-solid.svg") 90% / 6% no-repeat var(--contrast-primary);
+  background: url("/icons/angle-down-solid.svg") 90% / 6% no-repeat
+    var(--contrast-primary);
 }
