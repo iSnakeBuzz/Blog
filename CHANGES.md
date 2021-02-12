@@ -2,11 +2,15 @@
 
 - Changed CSS of the Login.
 - Changed CSS of the Editor.
+- Changed SharkButton from div to button.
+- Globalized SharkButton css.
 - Added Banner.jsx to work with multiple options in the banner.
 - Moved Title inputs to a diferent module.
--
--
--
+- 
+- 
+- 
+- 
+- 
 
 # 08/02/2021
 
