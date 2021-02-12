@@ -6,6 +6,7 @@
   position: fixed;
   background-color: var(--primary);
 
+  top: 0;
   width: 65px;
   height: 100vh;
 }

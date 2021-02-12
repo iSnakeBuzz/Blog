@@ -1,0 +1,6 @@
+.shark {
+  min-width: 250px;
+  min-height: 300px;
+  max-width: -webkit-fill-available;
+  font-size: 15px;
+}

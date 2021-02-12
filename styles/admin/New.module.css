@@ -1,0 +1,23 @@
+.container {
+  margin-top: 40px;
+  padding: 20px;
+
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container > * {
+  margin: 10px 0px;
+}
+
+.container > :first-child {
+  margin-top: 0;
+}
+
+.container > :last-child {
+  margin-bottom: 0;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 24px;
+}

@@ -24,27 +24,6 @@
   padding-top: 35px;
 }
 
-.auth_form input {
-  display: grid;
-  width: -webkit-fill-available;
-
-  padding: 12px 20px;
-  padding-top: 14px;
-
-  border: none;
-  outline: none;
-
-  border-bottom: solid 2px var(--contrast-primary);
-
-  transition: border 250ms ease-out;
-  background-color: var(--contrast-primary);
-}
-
-.auth_form input:hover,
-.auth_form input:focus {
-  border-bottom: solid 2px var(--primary);
-}
-
 .auth_form button {
   width: -webkit-fill-available;
   padding: 8px 0px;
