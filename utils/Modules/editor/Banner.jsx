@@ -24,7 +24,7 @@ const Banner = ({ onChange }) => {
         <Grid container spacing={2}>
             <Grid item xs={9}>
 
-                <input onChange={onInputChange} type={type === "image" ? "file" : "text"} placeholder={type === "image" ? "Upload file." : type === "twitch" ? "Paste a Twitch link" : "Paste a YouTube link."} />
+                <input onChange={onInputChange} type={type === "image" ? "file" : "text"} placeholder={type === "image" ? "Upload file." : type === "twitch" ? "Twitch Link" : "YouTube Link."} />
 
             </Grid>
             <Grid item xs={3}>
