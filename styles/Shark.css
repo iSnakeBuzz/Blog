@@ -167,6 +167,7 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  cursor: pointer;
 
   background: url("/icons/angle-down-solid.svg") 90% / 6% no-repeat
     var(--contrast-primary);
