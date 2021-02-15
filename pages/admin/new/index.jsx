@@ -27,8 +27,8 @@ const index = () => {
     }
 
     const onAnythingChange = (type, event) => {
-        if (type === "") {
-
+        if (type === 'content') {
+            setState({ ...state, content: event.target.value });
         }
     }
 
