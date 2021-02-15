@@ -1,3 +1,8 @@
+# 15/02/2021
+
+- Changed /index to ISR.
+- Changed post index to ISR.
+
 # 12/02/2021
 
 - Changed CSS of the Login.
@@ -6,11 +11,6 @@
 - Globalized SharkButton css.
 - Added Banner.jsx to work with multiple options in the banner.
 - Moved Title inputs to a diferent module.
-- 
-- 
-- 
-- 
-- 
 
 # 08/02/2021
 

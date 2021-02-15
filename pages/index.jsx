@@ -10,19 +10,36 @@ import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 import PostsContext from '../utils/Modules/context/PostsContext';
 import IndexContainer from '../utils/Modules/index/IndexContainer';
 
-const index = () => {
+const index = ({ data }) => {
+  return (
+    <>
+      <Head>
+        <title>Blog</title>
+      </Head>
 
-  const [data, setData] = React.useState({
-    posts: []
-  });
+      <PostsContext.Provider value={data || { posts: [] }}>
+        <Layout>
+          <IndexContainer />
+        </Layout>
+      </PostsContext.Provider>
 
-  React.useEffect(async () => {
-    const client = new ApolloClient({
-      uri: process.env.API_ENDPOINT,
-      cache: new InMemoryCache(),
-    })
+      <style jsx global>{`
+        html, body {
+          background-image: url("/utils/site-background.svg");
+        }
+      `}</style>
+    </>
+  );
+};
 
-    let query = gql`
+
+export async function getStaticProps({ params }) {
+  const client = new ApolloClient({
+    uri: process.env.API_ENDPOINT,
+    cache: new InMemoryCache(),
+  })
+
+  let query = gql`
     query getPosts {
       posts(page: 0) {
         _id
@@ -38,30 +55,23 @@ const index = () => {
     }
   }`;
 
-    const { data } = await client.query({ query });
-    console.log("Home Data:", data)
-    setData(data);
-  }, [])
+  return client.query({ query }).then(res => res.data).then(data => {
+    return {
+      props: {
+        data
+      },
+      revalidate: 120,
+    }
+  }).catch((err) => {
+    console.error(err);
+    return {
+      props: {
+        data: { posts: [] }
+      },
+      revalidate: 120,
+    }
+  });
+}
 
-  return (
-    <>
-      <Head>
-        <title>Blog</title>
-      </Head>
-
-      <PostsContext.Provider value={data}>
-        <Layout>
-          <IndexContainer />
-        </Layout>
-      </PostsContext.Provider>
-
-      <style jsx global>{`
-        html, body {
-          background-image: url("/utils/site-background.svg");
-        }
-      `}</style>
-    </>
-  );
-};
 
 export default index;

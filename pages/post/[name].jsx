@@ -16,6 +16,8 @@ const index = ({ data }) => {
         console.log("Data:", data);
     }, []);
 
+    if (!data) return (<></>);
+
     return (
         <PostContext.Provider value={data}>
             <Layout color="primary">
@@ -67,15 +69,16 @@ export async function getStaticProps({ params, res }) {
         variables: { name: params.name }
     });
 
-    if (!data || !data.post) {
-        res.writeHead(302, {
-            Location: '/',
-        });
-        return res.end();
-    }
+    if (!data || !data.post) return {
+        redirect: {
+            destination: '/',
+            permanent: false,
+        }
+    };
 
     return {
-        props: { data }
+        props: { data },
+        revalidate: 300
     }
 }
 
